@@ -1,10 +1,56 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import Badge from '../components/Badge.astro';
+import SocialPill from '../components/SocialPill.astro';
+import LinkedInIcon from '../components/Icons/Linkedin.astro';
+import GitHubIcon from '../components/Icons/GitHub.astro';
+import MailIcon from '../components/Icons/Mail.astro';
+import Experience from '../components/Experience.astro';
+import SectionContainer from '../components/SectionContainer.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Ander Torné Portfolio" description='Computer Science Student'>
 	<main>
-		<h1>Portfolio Ander</h1>
+		<SectionContainer>
+			<img 
+				class="rounded-full size-12 mb-4"
+				src="https://avatars.githubusercontent.com/u/65034057?v=4" 
+				alt="ander photo"
+			/>
+			<h1 class="text-white text-5xl font-bold flex justify-row flex-row gap-x-4 pb-4">
+				Hi, I'm Ander Torné<a 
+					href="https://www.linkedin.com/in/andertorne"
+					target="_blank"
+					rel="noopener"
+					class="flex justify-center items-center">
+					<Badge>Disponible</Badge>
+					<a/>
+			</h1>
+			<h2 class="text-2xl opacity-80 text-wrap">
+				Computer Engenierieng Student, 
+				<span class="text-yellow-200/90">De Guadalajara, México</span>
+				<span class="opacity-75">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium sequi quia possimus perferendis magni dolorem dolores provident voluptatibus, reprehenderit perspiciatis aliquam consequatur quos recusandae cupiditate facilis doloremque qui porro! Dolore?</span>
+			</h2>
+
+			<nav class="flex gap-x-2 mt-4">
+				<SocialPill href="https://www.linkedin.com/in/andertorne">
+					<LinkedInIcon class="size-6" />
+					LinkedIn
+				</SocialPill>
+				<SocialPill href="https://www.github.com/andertorne">
+					<GitHubIcon class="size-6" />
+					GitHub
+				</SocialPill>
+				<SocialPill href="https://www.github.com/andertorne">
+					<MailIcon class="size-6" />
+					aatorne@outlook.com
+				</SocialPill>
+			</s>
+		</SectionContainer>
+
+		<SectionContainer>
+			<Experience />
+		</SectionContainer>
 	</main>
 </Layout>
