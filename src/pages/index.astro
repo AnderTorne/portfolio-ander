@@ -8,17 +8,21 @@ import GitHubIcon from '../components/Icons/GitHub.astro';
 import MailIcon from '../components/Icons/Mail.astro';
 import Experience from '../components/Experience.astro';
 import SectionContainer from '../components/SectionContainer.astro';
+import Briefcase from '../components/Icons/Briefcase.astro';
+import CodeIcon from '../components/Icons/Code.astro';
+import Projects from '../components/Projects.astro';
 ---
 
 <Layout title="Ander Torné Portfolio" description='Computer Science Student'>
-	<main>
-		<SectionContainer>
+	<main class="px-4">
+		<SectionContainer class='py-32 pb-20'>
+		<!-- <SectionContainer> -->
 			<img 
 				class="rounded-full size-12 mb-4"
 				src="https://avatars.githubusercontent.com/u/65034057?v=4" 
 				alt="ander photo"
 			/>
-			<h1 class="text-white text-5xl font-bold flex justify-row flex-row gap-x-4 pb-4">
+			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex justify-row flex-row gap-x-4 pb-6 lg:pb-10">
 				Hi, I'm Ander Torné<a 
 					href="https://www.linkedin.com/in/andertorne"
 					target="_blank"
@@ -27,30 +31,43 @@ import SectionContainer from '../components/SectionContainer.astro';
 					<Badge>Disponible</Badge>
 					<a/>
 			</h1>
-			<h2 class="text-2xl opacity-80 text-wrap">
+			<h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700]">
 				Computer Engenierieng Student, 
 				<span class="text-yellow-200/90">De Guadalajara, México</span>
 				<span class="opacity-75">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium sequi quia possimus perferendis magni dolorem dolores provident voluptatibus, reprehenderit perspiciatis aliquam consequatur quos recusandae cupiditate facilis doloremque qui porro! Dolore?</span>
 			</h2>
 
-			<nav class="flex gap-x-2 mt-4">
+			<nav class="flex gap-4 mt-8 flex-wrap">
 				<SocialPill href="https://www.linkedin.com/in/andertorne">
-					<LinkedInIcon class="size-6" />
+					<LinkedInIcon class="size-4 md:size-6" />
 					LinkedIn
 				</SocialPill>
 				<SocialPill href="https://www.github.com/andertorne">
-					<GitHubIcon class="size-6" />
+					<GitHubIcon class="size-4 md:size-6" />
 					GitHub
 				</SocialPill>
-				<SocialPill href="https://www.github.com/andertorne">
-					<MailIcon class="size-6" />
+				<SocialPill href="mailto:aatorne@outlook.com">
+					<MailIcon class="size-4 md:size-6" />
 					aatorne@outlook.com
 				</SocialPill>
-			</s>
+			</nav>
 		</SectionContainer>
 
-		<SectionContainer>
+		<SectionContainer id="experience">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<Briefcase class="size-7" />
+				Experiencia
+			</h2>
 			<Experience />
 		</SectionContainer>
+		
+		<SectionContainer id="projects">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<CodeIcon class="size-6" />
+				Projects
+			</h2>
+			<Projects />
+		</SectionContainer>
+
 	</main>
 </Layout>
