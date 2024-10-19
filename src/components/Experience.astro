@@ -1,9 +1,10 @@
 ---
 import ExperienceItem from "@components/ExperienceItem.astro";
-const EXPERIENCIE = [
+const EXPERIENCE = [
   {
     date: "Febrero 2023 - Actualmente...",
     title: "Intern en Baxter México",
+    company: "Baxter México",
     description:
       "Intern del Programa Talent Lab de Baxter México, en el área de IT, en el equipo de Integración.",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7186051077723635712/",
@@ -11,11 +12,11 @@ const EXPERIENCIE = [
 ];
 ---
 
-<ol class="relative border-s border-wh-200 ml-3">
+<ol class="relative mt-16">
   {
-    EXPERIENCIE.map((experiencie) => (
-      <li class="mb-10 ms-4">
-        <ExperienceItem {...experiencie} />
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
       </li>
     ))
   }

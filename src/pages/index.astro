@@ -1,75 +1,47 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Badge from "@components/Badge.astro";
-import SocialPill from "@components/SocialPill.astro";
-import LinkedinIcon from "@icons/Linkedin.astro";
-import GitHubIcon from "@icons/GitHub.astro";
-import MailIcon from "@icons/Mail.astro";
-import Experience from "@components/Experience.astro";
-import SectionContainer from "@components/SectionContainer.astro";
+import Layout from "@layouts/Layout.astro";
+
+import AboutMe from "@components/AboutMe.astro";
 import Briefcase from "@components/icons/Briefcase.astro";
+import CodeIcon from "@components/icons/Code.astro";
+import Experience from "@components/Experience.astro";
+import ProfileCheck from "@components/icons/ProfileCheck.astro";
 import Projects from "@components/Projects.astro";
-import Code from "@components/icons/Code.astro";
+import SectionContainer from "@components/SectionContainer.astro";
+import Hero from "@components/Hero.astro";
+import TitleSection from "@components/TitleSection.astro";
 ---
 
-<Layout title="Portfolio Ander" description="Portfolio de Ander Torné">
+<Layout title="Porfolio de ander" description="Portafolio de Ander Torné Garza">
   <main class="px-4">
-    <SectionContainer class="py-32 pb-16">
-      <img
-        class="rounded-full size-12 mb-4"
-        src="https://avatars.githubusercontent.com/u/65034057?v=4"
-        alt="photo ander"
-      />
-      <h1
-        class="text-white text-3xl lg:text-4xl font-bold flex flex-row gap-x-4 pb-4 lg:pb-6"
-      >
-        Hi, im Ander <a
-          href="https://www.linkedin.com/in/andertorne/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex justify-center items-center"
-        >
-          <Badge>Disponible para trabajar</Badge>
-        </a>
-      </h1>
-      <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
-        <span class="text-yellow-300/90">Ingeniero en Computacion</span>
-        <span class=""> from Guadalajara, México.</span>
-      </h2>
-      <ul class="flex gap-4 pt-8 flex-wrap">
-        <li>
-          <SocialPill href="https://www.linkedin.com/in/andertorne/">
-            <LinkedinIcon class="size-4 md:size-6" />LinkedIn
-          </SocialPill>
-        </li>
-        <li>
-          <SocialPill href="https://www.github.com/andertorne/">
-            <GitHubIcon class="size-4 md:size-6" />Github
-          </SocialPill>
-        </li>
-
-        <li>
-          <SocialPill href="mailto:aatorne@outlook.com">
-            <MailIcon class="size-4 md:size-6" />aatorne@outlook.com
-          </SocialPill>
-        </li>
-      </ul>
+    <SectionContainer class="py-16 md:py-36">
+      <Hero />
     </SectionContainer>
 
-    <SectionContainer id="experiencia" class="pb-20">
-      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-        <Briefcase class="size-7" />
-        Experiencia Laboral
-      </h2>
-      <Experience />
-    </SectionContainer>
+    <div class="space-y-24">
+      <SectionContainer id="experiencia">
+        <TitleSection>
+          <Briefcase class="size-8" />
+          Experiencia laboral
+        </TitleSection>
+        <Experience />
+      </SectionContainer>
 
-    <SectionContainer id="proyectos" class="pb-20">
-      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-        <Code class="size-7" />
-        Proyectos
-      </h2>
-      <Projects />
-    </SectionContainer>
+      <SectionContainer id="proyectos">
+        <TitleSection>
+          <CodeIcon class="size-7" />
+          Proyectos
+        </TitleSection>
+        <Projects />
+      </SectionContainer>
+
+      <SectionContainer id="sobre-mi">
+        <TitleSection>
+          <ProfileCheck class="size-8" />
+          Sobre mí
+        </TitleSection>
+        <AboutMe />
+      </SectionContainer>
+    </div>
   </main>
 </Layout>
