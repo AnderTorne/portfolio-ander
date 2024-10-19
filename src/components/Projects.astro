@@ -1,0 +1,61 @@
+---
+import React from "@icons/React.astro";
+import Css from "@icons/Css.astro";
+import Tailwind from "@icons/Tailwind.astro";
+
+const TAGS = {
+  REACT: {
+    name: "React",
+    class: "bg-black text-white",
+    icon: React,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-black text-white",
+    icon: Css,
+  },
+  TAILWIND: {
+    name: "Tailwind",
+    // class: "bg-black text-[#73bcf6]",
+    class: "bg-black text-white",
+    icon: Tailwind,
+  },
+};
+const PROJECTS = [
+  {
+    title: "Tic-Tac-Toe React",
+    description:
+      "Juego del gato hecho con React, con IA para jugar contra la computadora",
+    link: "",
+    github: "https://github.com/AnderTorne/to-do-list-vue",
+    image: "/projects/gato.webp",
+    tags: [TAGS.REACT, TAGS.CSS],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ image, title, description, tags }) => (
+    <article>
+      <h3 class="text-2xl font-semibold text-yellow-300/90 mb-2">{title}</h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <ul class="flex gap-x-2 flex-row pb-4">
+        {tags.map((tag) => (
+          <li>
+            <span
+              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 hover:scale-105`}
+            >
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img
+        class="rounded shadow-2xl shadow-white/10 "
+        src={image}
+        alt={`Captura de pantalla del proyecto ${image}`}
+      />
+    </article>
+  ))
+}
